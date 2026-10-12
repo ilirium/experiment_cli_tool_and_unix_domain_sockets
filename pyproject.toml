@@ -1,0 +1,7 @@
+[project]
+name = "experiment-cli-tool-and-unix-domain-sockets"
+version = "0.1.0"
+requires-python = ">=3.15"
+dependencies = [
+    "numpy",
+]
