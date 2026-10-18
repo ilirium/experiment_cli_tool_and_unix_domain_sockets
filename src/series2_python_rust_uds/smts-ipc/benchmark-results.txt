@@ -1,0 +1,31 @@
+% python3 --version
+Python 3.9.6
+
+% make bench
+server already running on /var/folders/9g/lb1mtf217kj_5bmm5frklxf40000gn/T/smts-501.sock
+Benchmark 1: /Users/ilirium/Projects/local/experiment_cli_tool_and_unix_domain_sockets/src/series2_python_rust_uds/smts-ipc/client/target/release/smts echo x (877 runs)
+                mean     ±       σ          min     …     max
+  Wall Time      2.9 ms  ±     0.4 ms       2.4 ms  …     6.6 ms
+  Memory         1.5 MiB ±     0.0 MiB      1.5 MiB …     1.6 MiB
+
+Benchmark 2: python3 -c 'import argparse' (86 runs)
+                mean     ±       σ          min     …     max
+  Wall Time     34.9 ms  ±     1.6 ms      32.3 ms  …    44.6 ms         +1103.9%  (12.0x slower)
+  Memory         9.7 MiB ±     0.1 MiB      9.5 MiB …     9.9 MiB         +529.9%  (6.3x more)
+
+
+
+% uv run python3 --version
+Python 3.15.0
+
+% make bench
+server already running on /var/folders/9g/lb1mtf217kj_5bmm5frklxf40000gn/T/smts-501.sock
+Benchmark 1: /Users/ilirium/Projects/local/experiment_cli_tool_and_unix_domain_sockets/src/series2_python_rust_uds/smts-ipc/client/target/release/smts echo x (1072 runs)
+                mean     ±       σ          min     …     max
+  Wall Time      2.8 ms  ±     0.4 ms       2.3 ms  …     7.7 ms
+  Memory         1.5 MiB ±     0.0 MiB      1.5 MiB …     1.6 MiB
+
+Benchmark 2: uv run python3 -c 'import argparse' (84 runs)
+                mean     ±       σ          min     …     max
+  Wall Time     37.0 ms  ±     1.6 ms      34.7 ms  …    45.4 ms         +1209.7%  (13.1x slower)
+  Memory        25.1 MiB ±     0.0 MiB     25.0 MiB …    25.1 MiB        +1519.2%  (16.2x more)

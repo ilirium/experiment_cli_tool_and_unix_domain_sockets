@@ -8,6 +8,7 @@
 #   make test                 full end-to-end test of both modes
 
 PYTHON  ?= python3
+#PYTHON  ?= uv run python3
 CARGO   ?= cargo
 MODE    ?= thread               # thread | fork
 APP     ?= example_app:main
