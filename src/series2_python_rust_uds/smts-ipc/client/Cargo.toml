@@ -1,0 +1,15 @@
+[package]
+name = "smts"
+version = "0.1.0"
+edition = "2021"
+description = "Thin client that forwards argv, cwd, env and its stdio fds to a warm Python server"
+
+[dependencies]
+libc = "0.2"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
